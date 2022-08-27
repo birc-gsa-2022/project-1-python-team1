@@ -42,7 +42,7 @@ def lin(fasta, fastq):
                 e = get_edits(ps[i], xs[j][k :(k + len(ps[i])-1)])[2]
                 l = edits_to_cigar(e)
             
-                print(ps_names[i] + '   ' + xs_names[j] + '   ' + str(k + 1) + '   ' + l + '   ' + ps[i])
+                print(ps_names[i] + '\t' + xs_names[j] + '\t' + str(k + 1) + '\t' + l + '\t' + ps[i])
     return ''
 
 def main():
