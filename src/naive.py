@@ -4,7 +4,23 @@ import argparse
 
 from utils import *
 
+def naive_idx(p, x):
+    # Naive algortihm to find the start index of matching.
+    n = len(x)
+    m = len(p)
+    idx = []
+    for i in range(n - m + 1):
+        j = 0
+        while j < m:
+            if x[i + j] == p[j]:
+                j += 1
+            else:
+                break
+        else:
+            idx.append(i)
 
+
+    return idx
 
 def naive(fasta, fastq):
     #Naive algortihm that outputs simple SAM format

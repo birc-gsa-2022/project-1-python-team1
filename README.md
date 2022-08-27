@@ -84,15 +84,58 @@ Once you have implemented the tools, fill out the report below.
 
 ### Insights you may have had while implementing and comparing the algorithms. 
 
-*Describe this here.*
+Sometimes more is less. The border array algortihm aquires more code than the naive but runs faster in the end.
 
 ### Problems encountered if any. 
 
-*Describe this here.*
+Proper indexing is essential.
 
 ### Experiments that verifies the correctness of your implementations.
 
-*Describe this here.*
+I used the given missisipi-data
+
+```
+> chr1
+mississippi
+> chr2
+mississippimississippi
+```
+
+and this Simple-FASTQ file
+
+```
+@read1
+iss
+@read2
+mis
+@read3
+ssi
+@read4
+ssippi
+```
+
+your output should be
+
+```
+read1	chr1	2	3M	iss
+read1	chr1	5	3M	iss
+read1	chr2	2	3M	iss
+read1	chr2	5	3M	iss
+read1	chr2	13	3M	iss
+read1	chr2	16	3M	iss
+read2	chr1	1	3M	mis
+read2	chr2	1	3M	mis
+read2	chr2	12	3M	mis
+read3	chr1	3	3M	ssi
+read3	chr1	6	3M	ssi
+read3	chr2	3	3M	ssi
+read3	chr2	6	3M	ssi
+read3	chr2	14	3M	ssi
+read3	chr2	17	3M	ssi
+read4	chr1	6	6M	ssippi
+read4	chr2	6	6M	ssippi
+read4	chr2	17	6M	ssippi
+```
 
 ### Experiments validating the running time.
 
