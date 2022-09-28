@@ -4,18 +4,7 @@ import argparse
 
 from utils import *
 
-def main():
-    argparser = argparse.ArgumentParser(
-        description="Exact matching in linear time")
-    argparser.add_argument("genome", type=argparse.FileType('r'))
-    argparser.add_argument("reads", type=argparse.FileType('r'))
-    args = argparser.parse_args()
-    print(f"Find every reads in {args.reads.name} " +
-          f"in genome {args.genome.name}")
 
-
-if __name__ == '__main__':
-    main()
 
 
 def borderArray(p, x):
@@ -58,3 +47,16 @@ def lin(fasta, fastq):
             
                 print(ps_names[i] + '\t' + xs_names[j] + '\t' + str(k + 1) + '\t' + l + '\t' + ps[i])
     return ''
+
+def main():
+    argparser = argparse.ArgumentParser(
+        description="Exact matching in linear time")
+    argparser.add_argument("genome", type=argparse.FileType('r'))
+    argparser.add_argument("reads", type=argparse.FileType('r'))
+    args = argparser.parse_args()
+    print(f"Find every reads in {args.reads.name} " +
+          f"in genome {args.genome.name}")
+
+
+if __name__ == '__main__':
+    main()

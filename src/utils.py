@@ -3,6 +3,7 @@ from Bio import SeqIO  # Bio.SeqIO is the sequence Input/Output interface for Bi
 
 def parse_fastq(file):
     # Function to return sequences and fastq names from fastq file:
+    file = open(file, "r")
     ps = []
     ps_names = []
     for line in file:
@@ -16,10 +17,9 @@ def parse_fastq(file):
             ps.append(newline1)
     return ps, ps_names
 
-
-
 def fasta_recs(file):
     # Function to return sequences from fasta file:
+    file = open(file, "r")
     name = []
     sequence = []
     for record in SeqIO.parse(file, "fasta"):
@@ -27,7 +27,6 @@ def fasta_recs(file):
         sequence.append(str(record.seq))
 
     return sequence, name
-
 
 def get_edits(str1, str2):
     # Function that translates between two representations.
