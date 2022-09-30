@@ -5,7 +5,6 @@ from utils import *
 
 
 
-
 def naive_idx(p, x):
     # Naive algortihm to find the start index of matching.
     n = len(x)
@@ -37,15 +36,15 @@ def naive(fasta, fastq):
                 l = edits_to_cigar(e)
             
                 print(ps_names[i] + '\t' + xs_names[j] + '\t' + str(k + 1) + '\t' + l + '\t' + ps[i])
-    return ''
 
+                
 def main():
     argparser = argparse.ArgumentParser(
         description="Exact matching using the naive method")
     argparser.add_argument("genome", type=argparse.FileType('r'))
     argparser.add_argument("reads", type=argparse.FileType('r'))
     args = argparser.parse_args()
-    print(naive(args.genome.name, args.reads.name))
+    naive(args.genome.name, args.reads.name)
 
 
 if __name__ == '__main__':

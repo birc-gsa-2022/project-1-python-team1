@@ -2,6 +2,7 @@
 
 import argparse
 from asyncio.base_subprocess import ReadSubprocessPipeProto
+import numpy as np
 
 from utils import *
 
@@ -11,7 +12,6 @@ def borderArray(p, x):
     # Step 1: Construct s = p$x and its borderarray b
     s = p + "$" + x
     ba = np.zeros(len(s), dtype=int)
-    ba[0] = 0
     for i in range(1, len(s)):
         b = ba[i - 1]
         while b > 0 and s[i] != s[b]:
@@ -46,7 +46,7 @@ def lin(fasta, fastq):
                 l = edits_to_cigar(e)
             
                 print(ps_names[i] + '\t' + xs_names[j] + '\t' + str(k + 1) + '\t' + l + '\t' + ps[i])
-    return ''
+    return None
 
 def main():
     argparser = argparse.ArgumentParser(
@@ -54,7 +54,7 @@ def main():
     argparser.add_argument("genome", type=argparse.FileType('r'))
     argparser.add_argument("reads", type=argparse.FileType('r'))
     args = argparser.parse_args()
-    print(lin(args.genome.name, args.reads.name))
+    lin(args.genome.name, args.reads.name)
 
 
 if __name__ == '__main__':
