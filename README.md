@@ -84,15 +84,15 @@ Once you have implemented the tools, fill out the report below.
 
 ### Insights you may have had while implementing and comparing the algorithms. 
 
-*Describe this here.*
+It was no problem to implement the algorithms. 
 
 ### Problems encountered if any. 
 
-*Describe this here.*
+I had some problems with the output. I realized that I should have tested better from the beginning. But it worked out in the end.
 
 ### Experiments that verifies the correctness of your implementations.
 
-*Describe this here.*
+I used the missisipi data and the test data found on Github used to test the algorithms.
 
 ### Experiments validating the running time.
 
@@ -102,13 +102,7 @@ For this section, you should address the following:
 
 * An experiment that verifies that your implementations of `lin` use no more time than O(n+m) to find all occurrences of a given pattern in a text. Remember to explain your choice of test data. What are “best” and “worst” case inputs?
 
-You can insert pictures here like this:
+The experiment showing the time complexity of both algorithms are shown in the figure below. The running time for the linear algorithm is linear and the running time for the naive algorithm is quadratic as supposed. To begin with I used the test data where I did not see the supposed running times. Therefore, I made some longer sequences and patterns and set up a worst case scenario. The data used to make the figure is found in src/test_data.
 
-```
-![](path/to/fig)
-```
-
-I am not ready to share my own results yet, so I will just show you a fast scooter.
-
-![](figs/scooter.jpg)
+![](figs/time.jpg)
 
