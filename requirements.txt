@@ -1,4 +1,4 @@
 # Add packages you need here, one package per line
 numpy
 biopython
-matplotlib.pyplot
+matplotlib
