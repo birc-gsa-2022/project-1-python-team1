@@ -104,5 +104,5 @@ For this section, you should address the following:
 
 The experiment showing the time complexity of both algorithms are shown in the figure below. The running time for the linear algorithm is linear and the running time for the naive algorithm is quadratic as supposed. To begin with I used the test data where I did not see the supposed running times. Therefore, I made some longer sequences and patterns and set up a worst case scenario. The data used to make the figure is found in src/test_data.
 
-![](figs/time.jpg)
+![](figs/time.png)
 
